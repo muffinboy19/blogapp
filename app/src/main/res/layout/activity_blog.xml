@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="blogVM" type="com.blogapp.app.modules.blog.data.viewmodel.BlogVM"/>
+    </data>
+    <LinearLayout android:id="@+id/linearBlog"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylewhite_A700">
+        <androidx.appcompat.widget.Toolbar
+            android:gravity="center_horizontal"
+            android:id="@+id/toolbarAppbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" app:contentInsetStart="0dp">
+            <TextView android:ellipsize="end" android:id="@+id/txtHome"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{blogVM.blogModel.txtHome}"
+                style="@style/txtPoppinsmedium14" tools:text="@string/msg_john_doe_in_lor"/>
+            <LinearLayout android:id="@+id/linearGroup15"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <View
+                    android:background="@drawable/rectangle_bg_black_900_87_radius_1"
+                    android:id="@+id/viewDividercircle"
+                    android:layout_gravity="bottom"
+                    android:layout_height="@dimen/_3pxh" android:layout_width="@dimen/_3pxh"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtJulyCounter"
+                    android:layout_gravity="bottom"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{blogVM.blogModel.txtJulyCounter}"
+                    style="@style/txtPoppinsmedium14_1" tools:text="@string/lbl_29_july"/>
+                <ImageView android:id="@+id/imageCheckmark"
+                    android:layout_gravity="top"
+                    android:layout_height="@dimen/_36pxh"
+                    android:layout_width="@dimen/_36pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_checkmark"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_checkmark"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearColumntitle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_14pxv"
+            android:paddingEnd="@dimen/_27pxh"
+            android:paddingStart="@dimen/_27pxh" android:paddingTop="@dimen/_14pxv">
+            <TextView android:id="@+id/txtTitle"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:lineSpacingExtra="@dimen/_12pxh"
+                android:text="@{blogVM.blogModel.txtTitle}"
+                style="@style/txtPoppinssemibold24" tools:text="@string/msg_lorem_ipsum_dol3"/>
+            <TextView android:id="@+id/txtDescription"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:lineSpacingExtra="@dimen/_8pxh"
+                android:text="@{blogVM.blogModel.txtDescription}"
+                style="@style/txtPoppinsmediumitalic14" tools:text="@string/msg_lorem_ipsum_dol4"/>
+            <ImageView android:id="@+id/imageBlogimage"
+                android:layout_height="@dimen/_167pxh"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY" cornerRadius="@{@dimen/_5pxh}"
+                imageRes="@{@drawable/img_blogthumbnail_80x80}"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_blogthumbnail_80x80"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtImagecaption"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:lineSpacingExtra="@dimen/_6pxh"
+                android:singleLine="true"
+                android:text="@{blogVM.blogModel.txtImagecaption}"
+                style="@style/txtPoppinsregular12_3" tools:text="@string/msg_image_credit_l"/>
+            <TextView android:id="@+id/txtDescriptionOne"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:lineSpacingExtra="@dimen/_8pxh"
+                android:text="@{blogVM.blogModel.txtDescriptionOne}"
+                style="@style/txtPoppinsregular14" tools:text="@string/msg_duis_aute_irure"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>
